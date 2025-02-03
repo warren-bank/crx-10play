@@ -1,0 +1,1238 @@
+--------------------------------------------------------------------------------
+
+https://10play.com.au/
+
+--------------------------------------------------------------------------------
+
+test video:
+===========
+
+https://10play.com.au/ncis-sydney
+https://10play.com.au/ncis-sydney/episodes/season-1/ncis-sydney-s1-ep-1/tpv240513xzbrt
+
+-------------------------------------------------------------------------------- background
+
+Brightcove API:
+===============
+
+https://apis.support.brightcove.com/playback/references/reference_v2.html#tag/Videos/operation/Get_Video_by_ID_or_Reference_ID
+https://edge.api.brightcove.com/playback/v1/accounts/{{account_id}}/videos/ref:{reference_id}
+
+policy_key='xxx'
+account_id='yyy'
+reference_id='zzz'
+
+curl --insecure \
+  -H "Referer: https://7plus.com.au/gilmore-girls" \
+  -H "BCOV-POLICY: ${policy_key}" \
+  "https://edge.api.brightcove.com/playback/v1/accounts/${account_id}/videos/ref:${reference_id}"
+
+-------------------------------------------------------------------------------- initial inspection (dead end):
+
+tl;dr: neither the page DOM, nor any of the .js scripts appear to contain a "policyKey" for the Brightcove API
+
+--------------------------------------------------------------------------------
+
+view-source:https://10play.com.au/ncis-sydney/episodes/season-1/ncis-sydney-s1-ep-1/tpv240513xzbrt
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@graph": [{
+    "@type": "BreadcrumbList",
+    "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1,
+      "item": {
+        "@id": "https://10play.com.au/ncis-sydney",
+        "name": "NCIS: Sydney"
+      }
+    }, {
+      "@type": "ListItem",
+      "position": 2,
+      "item": {
+        "@id": "https://10play.com.au/ncis-sydney/episodes",
+        "name": "Episodes"
+      }
+    }, {
+      "@type": "ListItem",
+      "position": 3,
+      "item": {
+        "@id": "https://10play.com.au/ncis-sydney/episodes/season-1",
+        "name": "Season 1"
+      }
+    }, {
+      "@type": "ListItem",
+      "position": 4,
+      "item": {
+        "@id": "https://10play.com.au/ncis-sydney/episodes/season-1/ncis-sydney-s1-ep-1/tpv240513xzbrt",
+        "name": "NCIS: Sydney - S1 Ep. 1"
+      }
+    }]
+  }, {
+    "@type": "VideoObject",
+    "name": "NCIS: Sydney - S1 Ep. 1",
+    "description": "The death of a US submariner during an AUKUS ceremony in Sydney is investigated in a joint effort between NCIS Agents Afloat and the Australian Federal Police, and NCIS: Sydney is born.",
+    "keywords": null,
+    "url": "https://10play.com.au/ncis-sydney/episodes/season-1/ncis-sydney-s1-ep-1/tpv240513xzbrt",
+    "contentUrl": "https://10play.com.au/ncis-sydney/episodes/season-1/ncis-sydney-s1-ep-1/tpv240513xzbrt",
+    "image": ["https://10play.com.au/ip/vs/10PlayImages/9000000000086538/thumb-2059992.jpg?image-profile=image_full\u0026io=landscape"],
+    "thumbnailUrl": "https://10play.com.au/ip/vs/10PlayImages/9000000000086538/thumb-2059992.jpg?image-profile=image_full\u0026io=landscape",
+    "dateCreated": "2024-05-15T11:38:00+00:00",
+    "datePublished": "2024-05-15T11:38:00+00:00",
+    "dateModified": "2024-05-28T03:56:14+00:00",
+    "uploadDate": "2024-05-28T03:56:14+00:00",
+    "publisher": {
+      "@type": "Organization",
+      "name": "10 play",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://10play.com.au/images/10-icon.png"
+      }
+    },
+    "duration": "PT2575S"
+  }]
+}
+</script>
+
+<script>
+var TealiumData = {
+  "siteDomain": "https://10play.com.au",
+  "siteName": "10 play",
+  "pageContentName": "NCIS: Sydney - S1 Ep. 1",
+  "siteSubSection1": "ncis-sydney",
+  "siteSubSection2": "episodes",
+  "siteSubSection3": "season-1",
+  "siteSubSection4": "ncis-sydney-s1-ep-1",
+  "siteSubSection5": "tpv240513xzbrt",
+  "showKey": null,
+  "showName": "NCIS: Sydney",
+  "showNameTargeting": "ncis_sydney",
+  "showProgramClassification": "M",
+  "showGenre": ["Drama"],
+  "showGenreSecondary": [],
+  "showGenres": ["drama"],
+  "showChannel": "ten",
+  "siteSection": "Shows",
+  "showContentCategory": "Episodes",
+  "showContentId": null,
+  "tealium_event": "show_episode_view",
+  "pageContentId": "tpv240513xzbrt",
+  "videoContentCategories": ["episodes"],
+  "showContentVideoType": "Full Episode",
+  "showContentFormatType": "Long Form",
+  "showContentSeason": "Season 1",
+  "showContentName": "NCIS: Sydney - S1 Ep. 1",
+  "contentPublishDate": "2024-05-15T11:38:00+00:00",
+  "pageContentPublishDate": "2024-05-15T11:38:00+00:00",
+  "pageContentType": "Video",
+  "showContentVideoPlatform": "brightcove",
+  "showContentVideoId": "9000000000086538"
+};
+</script>
+
+<script>
+const headerData = {
+  "userName": null,
+  "userLoggedIn": false,
+  "megaMenu": {
+    "showsMenu": {
+      "primaryTpId": "MjQ2OTMx",
+      "secondaryTpId": "MjQ2OTMz",
+      "primaryLinksHeading": "Catch Up On...",
+      "primaryLinks": [{
+        "subText": "Wheel Of Fortune Australia",
+        "imageUrl": "https://10play.com.au/ip/s3/2024/11/21/f0c92cac485467d299735b222771e9ca-1351576.jpg?image-profile=image_small\u0026io=landscape",
+        "text": "Wheel Of Fortune Australia",
+        "url": "/wheel-of-fortune-australia",
+        "external": false
+      }, {
+        "subText": "Dessert Masters",
+        "imageUrl": "https://10play.com.au/ip/s3/2024/10/23/3868b2ea6d920b561a2939fa3061e0bf-1345798.jpg?image-profile=image_small\u0026io=landscape",
+        "text": "Dessert Masters",
+        "url": "/dessert-masters",
+        "external": false
+      }, {
+        "subText": "Shark Tank",
+        "imageUrl": "https://10play.com.au/ip/s3/2024/10/01/6d2db6eb7323037fb31a622b6b6d0487-1341824.jpg?image-profile=image_small\u0026io=landscape",
+        "text": "Shark Tank",
+        "url": "/shark-tank",
+        "external": false
+      }],
+      "secondaryLinkGroups": [{
+        "heading": "Featured TV Shows",
+        "links": [{
+          "text": "Dessert Masters",
+          "url": "/dessert-masters",
+          "external": false
+        }, {
+          "text": "The Amazing Race Australia",
+          "url": "/the-amazing-race-australia",
+          "external": false
+        }, {
+          "text": "Taskmaster",
+          "url": "/taskmaster",
+          "external": false
+        }, {
+          "text": "Thank God You\u0027re Here",
+          "url": "/thank-god-youre-here",
+          "external": false
+        }, {
+          "text": "Have You Been Paying Attention?",
+          "url": "/have-you-been-paying-attention",
+          "external": false
+        }, {
+          "text": "Deal Or No Deal",
+          "url": "/deal-or-no-deal",
+          "external": false
+        }, {
+          "text": "The Cheap Seats",
+          "url": "/the-cheap-seats",
+          "external": false
+        }, {
+          "text": "The Project",
+          "url": "/theproject",
+          "external": false
+        }, {
+          "text": "Hunted",
+          "url": "/hunted",
+          "external": false
+        }, {
+          "text": "The Inspired Unemployed\u0027s (Impractical) Jokers",
+          "url": "/the-inspired-unemployeds-impractical-jokers",
+          "external": false
+        }]
+      }, {
+        "heading": "Shows By Genre",
+        "links": [{
+          "text": "Adventure",
+          "url": "/shows/adventure",
+          "external": false
+        }, {
+          "text": "Comedy",
+          "url": "/shows/comedy",
+          "external": false
+        }, {
+          "text": "Crime",
+          "url": "/shows/crime",
+          "external": false
+        }, {
+          "text": "Documentary",
+          "url": "/shows/documentary",
+          "external": false
+        }, {
+          "text": "Drama",
+          "url": "/shows/drama",
+          "external": false
+        }, {
+          "text": "Kids",
+          "url": "/shows/kids",
+          "external": false
+        }, {
+          "text": "Lifestyle",
+          "url": "/shows/lifestyle",
+          "external": false
+        }, {
+          "text": "Light Entertainment",
+          "url": "/shows/light-entertainment",
+          "external": false
+        }, {
+          "text": "Movies",
+          "url": "/shows/movie",
+          "external": false
+        }, {
+          "text": "News",
+          "url": "/shows/news",
+          "external": false
+        }, {
+          "text": "Reality",
+          "url": "/shows/reality",
+          "external": false
+        }, {
+          "text": "Sport",
+          "url": "/shows/sport",
+          "external": false
+        }]
+      }]
+    },
+    "liveTvMenu": {
+      "primaryTitle": "On-Air",
+      "primaryItems": [{
+        "channelId": "ten",
+        "channelName": "10",
+        "channelUrl": "https://10play.com.au/live/ten",
+        "channelCssClass": "ten",
+        "channelColour": "#1882f8",
+        "channelLogoUrl": "https://10play.com.au/ip/s3/2022/10/20/6e4447319224ed3fda71b6b635e2fce9-1188876.png",
+        "channelLogoDarkUrl": "https://10play.com.au/ip/s3/2022/10/20/24a8809c70762a5d674db028af2f29e3-1188877.png",
+        "eventTitle": "Lingo",
+        "eventStartDate": "2025-02-03T21:58:00Z",
+        "eventEndDate": "2025-02-03T22:59:00Z",
+        "eventRating": "G",
+        "eventIsWebLive": true
+      }, {
+        "channelId": "bold",
+        "channelName": "10 BOLD Drama",
+        "channelUrl": "https://10play.com.au/live/bold",
+        "channelCssClass": "tenbold",
+        "channelColour": "#e6103c",
+        "channelLogoUrl": "https://10play.com.au/ip/s3/2024/06/11/bb78467fabb68bcc5d35de5e70b172ae-1319865.png",
+        "channelLogoDarkUrl": "https://10play.com.au/ip/s3/2024/06/11/fb2633f37fd91642e3b1be673b2264a4-1319861.png",
+        "eventTitle": "Jake and the Fatman",
+        "eventStartDate": "2025-02-03T21:30:00Z",
+        "eventEndDate": "2025-02-03T22:30:00Z",
+        "eventRating": "M",
+        "eventIsWebLive": true
+      }, {
+        "channelId": "peach",
+        "channelName": "10 Peach Comedy",
+        "channelUrl": "https://10play.com.au/live/peach",
+        "channelCssClass": "tenpeach",
+        "channelColour": "#ba0df9",
+        "channelLogoUrl": "https://10play.com.au/ip/s3/2024/06/11/4d5efd68c6191c193a8bdb404a2e6a31-1319868.png",
+        "channelLogoDarkUrl": "https://10play.com.au/ip/s3/2024/06/11/cd85a4f5d4a1eb0278765656f303d83c-1319867.png",
+        "eventTitle": "Neighbours",
+        "eventStartDate": "2025-02-03T22:00:00Z",
+        "eventEndDate": "2025-02-03T22:32:00Z",
+        "eventRating": "PG",
+        "eventIsWebLive": true
+      }, {
+        "channelId": "nickelodeon",
+        "channelName": "Nickelodeon",
+        "channelUrl": "https://10play.com.au/live/nickelodeon",
+        "channelCssClass": "tenshake",
+        "channelColour": "#f15b22",
+        "channelLogoUrl": "https://10play.com.au/ip/s3/2023/07/31/9bf17d41aaafa3d5f0c416dfed96ef08-1252730.png",
+        "channelLogoDarkUrl": "https://10play.com.au/ip/s3/2023/07/31/dc4873abc5ba0fde04b59a78c89e0943-1252731.png",
+        "eventTitle": "Baby Shark\u0027s Big Show",
+        "eventStartDate": "2025-02-03T22:27:00Z",
+        "eventEndDate": "2025-02-03T22:52:00Z",
+        "eventRating": "G",
+        "eventIsWebLive": true
+      }],
+      "secondaryTitle": "Featured",
+      "secondaryItems": [{
+        "channelId": "south-park",
+        "channelName": "South Park",
+        "channelUrl": "https://10play.com.au/live/south-park",
+        "channelCssClass": "south-park",
+        "channelColour": "#dc2f34",
+        "channelLogoUrl": "https://10play.com.au/ip/s3/2023/08/03/3c8d2ec1df1b072b7aa68e2a219415a1-1253593.png",
+        "channelLogoDarkUrl": "https://10play.com.au/ip/s3/2023/08/03/41a79ba6a28f011b379ea68d41c28ea0-1253591.png",
+        "eventTitle": "South Park S4 Ep. 5",
+        "eventStartDate": "2025-02-03T22:23:00+00:00",
+        "eventEndDate": "2025-02-03T22:50:00+00:00",
+        "eventRating": "MA15+",
+        "eventIsWebLive": true
+      }, {
+        "channelId": "becker",
+        "channelName": "Becker",
+        "channelUrl": "https://10play.com.au/live/becker",
+        "channelCssClass": "becker",
+        "channelColour": "#976ed8",
+        "channelLogoUrl": "https://10play.com.au/ip/s3/2023/06/28/263730838d298ff594e227374cf0c963-1246029.png",
+        "channelLogoDarkUrl": "https://10play.com.au/ip/s3/2023/06/28/e0449ed804aaacb1de64f87d94912dd3-1246030.png",
+        "eventTitle": "Becker S1 Ep. 21",
+        "eventStartDate": "2025-02-03T22:21:00+00:00",
+        "eventEndDate": "2025-02-03T22:48:00+00:00",
+        "eventRating": "PG",
+        "eventIsWebLive": true
+      }, {
+        "channelId": "48hours",
+        "channelName": "48 Hours",
+        "channelUrl": "https://10play.com.au/live/48hours",
+        "channelCssClass": "forty-eight-hours",
+        "channelColour": "#5f9bfa",
+        "channelLogoUrl": "https://10play.com.au/ip/s3/2023/06/28/ba204c627bd221c6dd725d498bb76076-1245996.png",
+        "channelLogoDarkUrl": "https://10play.com.au/ip/s3/2023/06/28/7dd910de29f31095b69e17f1da8f3f0e-1245997.png",
+        "eventTitle": "48 Hours S25 Ep. 43",
+        "eventStartDate": "2025-02-03T21:52:00+00:00",
+        "eventEndDate": "2025-02-03T22:40:00+00:00",
+        "eventRating": "M",
+        "eventIsWebLive": true
+      }, {
+        "channelId": "nick-jr-paw-patrol",
+        "channelName": "Paw Patrol",
+        "channelUrl": "https://10play.com.au/live/nick-jr-paw-patrol",
+        "channelCssClass": "paw-patrol",
+        "channelColour": "#00a3de",
+        "channelLogoUrl": "https://10play.com.au/ip/s3/2024/06/26/1a371a8349e29410d2127b39ea95e930-1322992.png",
+        "channelLogoDarkUrl": "https://10play.com.au/ip/s3/2024/06/26/57ccdf739d9f33cc2f95f659d5090c12-1322991.png",
+        "eventTitle": "Paw Patrol S5 Ep. 25",
+        "eventStartDate": "2025-02-03T22:21:00+00:00",
+        "eventEndDate": "2025-02-03T22:45:00+00:00",
+        "eventRating": "G",
+        "eventIsWebLive": true
+      }],
+      "moreItemsTitle": "More Channels",
+      "moreItems": [{
+        "channelId": "rugrats",
+        "channelName": "Rugrats",
+        "channelUrl": "https://10play.com.au/live/rugrats",
+        "channelCssClass": "rugrats",
+        "channelColour": "#f0649d",
+        "channelLogoUrl": "https://10play.com.au/ip/s3/2024/10/31/20677e1ed06ef7b1a8e454c0d196f1dc-1347373.png",
+        "channelLogoDarkUrl": "https://10play.com.au/ip/s3/2024/10/31/85d6de4b1422e9a78ed09add7110d5e9-1347374.png",
+        "eventTitle": null,
+        "eventStartDate": null,
+        "eventEndDate": null,
+        "eventRating": null,
+        "eventIsWebLive": null
+      }, {
+        "channelId": "mtv-ridiculousness",
+        "channelName": "MTV Ridiculousness",
+        "channelUrl": "https://10play.com.au/live/mtv-ridiculousness",
+        "channelCssClass": "mtvridiculousness",
+        "channelColour": "#ff0000",
+        "channelLogoUrl": "https://10play.com.au/ip/s3/2024/02/19/1092259b52f72956f99070de99194473-1298685.png",
+        "channelLogoDarkUrl": "https://10play.com.au/ip/s3/2024/02/19/6a7d740896d031b59c9d33d0e6dff544-1298686.png",
+        "eventTitle": null,
+        "eventStartDate": null,
+        "eventEndDate": null,
+        "eventRating": null,
+        "eventIsWebLive": null
+      }, {
+        "channelId": "diagnosismurder",
+        "channelName": "Diagnosis Murder",
+        "channelUrl": "https://10play.com.au/live/diagnosismurder",
+        "channelCssClass": "diagnosismurder",
+        "channelColour": "#d20001",
+        "channelLogoUrl": "https://10play.com.au/ip/s3/2023/06/28/a1cd4cdbf31746b011394bf319bbfe43-1246004.png",
+        "channelLogoDarkUrl": "https://10play.com.au/ip/s3/2023/06/28/5f85fc3d794a167630b935cb639abcc3-1246005.png",
+        "eventTitle": null,
+        "eventStartDate": null,
+        "eventEndDate": null,
+        "eventRating": null,
+        "eventIsWebLive": null
+      }, {
+        "channelId": "world-of-survivor",
+        "channelName": "World Of Survivor",
+        "channelUrl": "https://10play.com.au/live/world-of-survivor",
+        "channelCssClass": "world-of-survivor",
+        "channelColour": "#ffa800",
+        "channelLogoUrl": "https://10play.com.au/ip/s3/2024/09/24/c1b85364f9457d04cb39a3c8622c45b5-1340643.png",
+        "channelLogoDarkUrl": "https://10play.com.au/ip/s3/2024/09/24/6a7955dee63fad795d40332b9cfbf8ce-1340644.png",
+        "eventTitle": null,
+        "eventStartDate": null,
+        "eventEndDate": null,
+        "eventRating": null,
+        "eventIsWebLive": null
+      }, {
+        "channelId": "aussie-drama-pop-up",
+        "channelName": "Offspring",
+        "channelUrl": "https://10play.com.au/live/aussie-drama-pop-up",
+        "channelCssClass": "aussiedramapopup",
+        "channelColour": "#f9a668",
+        "channelLogoUrl": "https://10play.com.au/ip/s3/2024/05/17/def04912c3a707704d8c814e5888a1b7-1315162.png",
+        "channelLogoDarkUrl": "https://10play.com.au/ip/s3/2024/05/17/8bebf40ecadaa2add04ca64c7084e74a-1315159.png",
+        "eventTitle": null,
+        "eventStartDate": null,
+        "eventEndDate": null,
+        "eventRating": null,
+        "eventIsWebLive": null
+      }, {
+        "channelId": "8-out-of-10-cats",
+        "channelName": "8 Out Of 10 Cats",
+        "channelUrl": "https://10play.com.au/live/8-out-of-10-cats",
+        "channelCssClass": "eightoutof10cats",
+        "channelColour": "#f9283e",
+        "channelLogoUrl": "https://10play.com.au/ip/s3/2024/11/18/a97a9ff8e9b1cd38b903cf654cff9d39-1350732.png",
+        "channelLogoDarkUrl": "https://10play.com.au/ip/s3/2024/11/18/03a9b9a1a42bcf2ce1bbb94a8fa47224-1350731.png",
+        "eventTitle": null,
+        "eventStartDate": null,
+        "eventEndDate": null,
+        "eventRating": null,
+        "eventIsWebLive": null
+      }, {
+        "channelId": "the-only-way-is-essex",
+        "channelName": "The Only Way Is Essex",
+        "channelUrl": "https://10play.com.au/live/the-only-way-is-essex",
+        "channelCssClass": "theonlywayisessex",
+        "channelColour": "#3a92e9",
+        "channelLogoUrl": "https://10play.com.au/ip/s3/2024/10/21/265b978bf7e85d5e46c58334096ace9e-1345464.png",
+        "channelLogoDarkUrl": "https://10play.com.au/ip/s3/2024/10/21/644463c986545838587c1b800be3da68-1345463.png",
+        "eventTitle": null,
+        "eventStartDate": null,
+        "eventEndDate": null,
+        "eventRating": null,
+        "eventIsWebLive": null
+      }, {
+        "channelId": "buzzfeed-food",
+        "channelName": "BuzzFeed Food",
+        "channelUrl": "https://10play.com.au/live/buzzfeed-food",
+        "channelCssClass": "buzzfeed-food",
+        "channelColour": "#ee3322",
+        "channelLogoUrl": "https://10play.com.au/ip/s3/2024/10/02/3cc0ccd0fa3ba48fa9ead230bdf4d166-1342135.png",
+        "channelLogoDarkUrl": "https://10play.com.au/ip/s3/2024/10/02/67846aad09b5fe5efafd5ee005117475-1342134.png",
+        "eventTitle": null,
+        "eventStartDate": null,
+        "eventEndDate": null,
+        "eventRating": null,
+        "eventIsWebLive": null
+      }, {
+        "channelId": "spongebob-squarepants",
+        "channelName": "SpongeBob SquarePants",
+        "channelUrl": "https://10play.com.au/live/spongebob-squarepants",
+        "channelCssClass": "spongebobsquarepants",
+        "channelColour": "#4ebecd",
+        "channelLogoUrl": "https://10play.com.au/ip/s3/2024/05/27/8882ec3454814fbb308dcab23bc40404-1316804.png",
+        "channelLogoDarkUrl": "https://10play.com.au/ip/s3/2024/05/27/ee4d9694aa3f7a2fe97b6f18aa773b88-1316803.png",
+        "eventTitle": null,
+        "eventStartDate": null,
+        "eventEndDate": null,
+        "eventRating": null,
+        "eventIsWebLive": null
+      }, {
+        "channelId": "embarrassing-bodies",
+        "channelName": "Embarrassing Bodies",
+        "channelUrl": "https://10play.com.au/live/embarrassing-bodies",
+        "channelCssClass": "embarrassing-bodies",
+        "channelColour": "#63c39a",
+        "channelLogoUrl": "https://10play.com.au/ip/s3/2024/10/21/d87954431824fdffefeb0c2e51d47a48-1345393.png",
+        "channelLogoDarkUrl": "https://10play.com.au/ip/s3/2024/10/21/f315a8cda9494cc30e29fdba87430ff8-1345391.png",
+        "eventTitle": null,
+        "eventStartDate": null,
+        "eventEndDate": null,
+        "eventRating": null,
+        "eventIsWebLive": null
+      }, {
+        "channelId": "crime-time",
+        "channelName": "Crime Time",
+        "channelUrl": "https://10play.com.au/live/crime-time",
+        "channelCssClass": "crime-time",
+        "channelColour": "#ff032d",
+        "channelLogoUrl": "https://10play.com.au/ip/s3/2024/09/25/73f13663d37d4a9adfeef8975485dc5b-1341001.png",
+        "channelLogoDarkUrl": "https://10play.com.au/ip/s3/2024/09/25/c27b803a4128c5b097cd3a23e1be973c-1341004.png",
+        "eventTitle": null,
+        "eventStartDate": null,
+        "eventEndDate": null,
+        "eventRating": null,
+        "eventIsWebLive": null
+      }, {
+        "channelId": "nicktoons-90s",
+        "channelName": "NickToons 90s",
+        "channelUrl": "https://10play.com.au/live/nicktoons-90s",
+        "channelCssClass": "nicktoons-90s",
+        "channelColour": "#ff6700",
+        "channelLogoUrl": "https://10play.com.au/ip/s3/2024/06/06/bb57f5de4d1132a019d25257eca9da2a-1318971.png",
+        "channelLogoDarkUrl": "https://10play.com.au/ip/s3/2024/06/07/a1aaf63737e7d2076759dd850b58471a-1319376.png",
+        "eventTitle": null,
+        "eventStartDate": null,
+        "eventEndDate": null,
+        "eventRating": null,
+        "eventIsWebLive": null
+      }],
+      "cacheKeys": ["content"]
+    },
+    "newsMenu": {
+      "localisedNewsFirst": {
+        "text": "Sydney",
+        "url": "/news/sydney",
+        "external": false
+      },
+      "tenSportsLinks": [{
+        "subText": "Sport",
+        "imageUrl": "https://10play.com.au/ip/s3/2024/01/24/1a0ea465e95490832bff3cdd9306bfd4-1293803.jpg?image-profile=image_small\u0026io=landscape",
+        "text": "Sport",
+        "url": "/sport",
+        "external": false
+      }, {
+        "subText": "Football",
+        "imageUrl": "https://10play.com.au/ip/s3/2023/04/06/9314307a0dd6eac0fe82bb016e2ef70a-1228528.jpg?image-profile=image_small\u0026io=landscape",
+        "text": "Football",
+        "url": "/football",
+        "external": false
+      }, {
+        "subText": "A-League",
+        "imageUrl": "https://10play.com.au/ip/s3/2024/10/16/1e1ffa7fbd38a646b0024d0ac1c08c0d-1344564.jpg?image-profile=image_small\u0026io=landscape",
+        "text": "A-League",
+        "url": "/a-league",
+        "external": false
+      }, {
+        "subText": "Socceroos",
+        "imageUrl": "https://10play.com.au/ip/s3/2022/11/22/bff61cfafc194970a175474fe99a6023-1199379.jpg?image-profile=image_small\u0026io=landscape",
+        "text": "Socceroos",
+        "url": "/socceroos",
+        "external": false
+      }, {
+        "subText": "Matildas",
+        "imageUrl": "https://10play.com.au/ip/s3/2022/08/30/b39f406e02b17a633c8395b165eacfa8-1176163.jpg?image-profile=image_small\u0026io=landscape",
+        "text": "Matildas",
+        "url": "/matildas",
+        "external": false
+      }, {
+        "subText": "Roshn Saudi League",
+        "imageUrl": "https://10play.com.au/ip/s3/2023/09/01/7341b93ebeb2acbaa65000554c43daff-1259572.jpg?image-profile=image_small\u0026io=landscape",
+        "text": "Roshn Saudi League",
+        "url": "/roshn-saudi-league",
+        "external": false
+      }, {
+        "subText": "Sunday Hoops",
+        "imageUrl": "https://10play.com.au/ip/s3/2024/09/25/f7fd2bed1cac5abf8b3ca7154a932697-1340952.jpg?image-profile=image_small\u0026io=landscape",
+        "text": "Sunday Hoops",
+        "url": "/sunday-hoops",
+        "external": false
+      }],
+      "trendingLinks": [{
+        "contentType": "article",
+        "cardLink": "/australian-survivor/articles/australian-survivor-2025-brains-v-brawn-meet-the-full-cast/tpa250115ukfqa",
+        "cardImage": {
+          "url": "https://10play.com.au/ip/s3/2025/01/19/5515bc0ad14d2d8ad018cfa1e7a4cbb3-1359810.png?image-profile=image_small\u0026io=landscape",
+          "retinaUrl": "https://10play.com.au/ip/s3/2025/01/19/5515bc0ad14d2d8ad018cfa1e7a4cbb3-1359810.png?image-profile=image_small\u0026io=landscape\u0026dpr=2",
+          "lazyLoad": true,
+          "alt": "Australian Survivor 2025: Brains V Brawn - Meet The Full Cast",
+          "placeholderUrl": "/images/image_small.png"
+        },
+        "cardTitle": "Australian Survivor 2025: Brains V Brawn - Meet The Full Cast",
+        "cardDescription": "It\u0027s the rematch in the battle between mind and muscle, but who will be crowned Australia\u0027s next Sole Survivor?",
+        "videoLabel": null,
+        "videoDuration": null,
+        "datePublished": "2025-01-19T23:00:00",
+        "startDate": null,
+        "endDate": null,
+        "datePublishedString": null,
+        "urlCode": "tpa250115ukfqa",
+        "isLive": false,
+        "id": 1359365,
+        "tpId": "MTYzOTUzNQ==",
+        "genre": "Reality"
+      }, {
+        "contentType": "article",
+        "cardLink": "/im-a-celebrity-get-me-out-of-here/articles/im-a-celebrity-get-me-out-of-here-2025-meet-the-celebrities/tpa250115choui",
+        "cardImage": {
+          "url": "https://10play.com.au/ip/s3/2025/01/19/731306e1a5f79b797573ec22d263eee2-1359750.png?image-profile=image_small\u0026io=landscape",
+          "retinaUrl": "https://10play.com.au/ip/s3/2025/01/19/731306e1a5f79b797573ec22d263eee2-1359750.png?image-profile=image_small\u0026io=landscape\u0026dpr=2",
+          "lazyLoad": true,
+          "alt": "I’m A Celebrity Get Me Out Of Here 2025: Meet The Celebrities",
+          "placeholderUrl": "/images/image_small.png"
+        },
+        "cardTitle": "I’m A Celebrity Get Me Out Of Here 2025: Meet The Celebrities",
+        "cardDescription": "It\u0027s time to welcome a whole new crew to the South African jungle!",
+        "videoLabel": null,
+        "videoDuration": null,
+        "datePublished": "2025-01-20T05:33:00",
+        "startDate": null,
+        "endDate": null,
+        "datePublishedString": null,
+        "urlCode": "tpa250115choui",
+        "isLive": false,
+        "id": 1359223,
+        "tpId": "MTIyOTUzMw==",
+        "genre": "Reality"
+      }, {
+        "contentType": "recipe",
+        "cardLink": "/dessert-masters/recipes/spread-the-love/r241015zubjy",
+        "cardImage": {
+          "url": "https://10play.com.au/ip/s3/2024/10/15/467e299ad31b083d13aa10e983136fd0-1344354.png?image-profile=image_small\u0026io=landscape",
+          "retinaUrl": "https://10play.com.au/ip/s3/2024/10/15/467e299ad31b083d13aa10e983136fd0-1344354.png?image-profile=image_small\u0026io=landscape\u0026dpr=2",
+          "lazyLoad": true,
+          "alt": "Spread The Love",
+          "placeholderUrl": "/images/image_small.png"
+        },
+        "cardTitle": "Spread The Love",
+        "cardDescription": "Jana Lai, Dessert Masters Season 2",
+        "videoLabel": null,
+        "videoDuration": null,
+        "datePublished": "2024-10-28T20:48:36",
+        "startDate": null,
+        "endDate": null,
+        "datePublishedString": null,
+        "urlCode": "r241015zubjy",
+        "isLive": false,
+        "id": 1344333,
+        "tpId": "MTMzNDQzMw==",
+        "genre": "Reality"
+      }, {
+        "contentType": "article",
+        "cardLink": "/general-hospital/articles/iconic-soap-general-hospital-is-coming-to-10-play/tpa241022sneit",
+        "cardImage": {
+          "url": "https://10play.com.au/ip/s3/2024/10/22/3c9e20d808dfb2676a3843f3f33be5a7-1345589.jpg?image-profile=image_small\u0026io=landscape",
+          "retinaUrl": "https://10play.com.au/ip/s3/2024/10/22/3c9e20d808dfb2676a3843f3f33be5a7-1345589.jpg?image-profile=image_small\u0026io=landscape\u0026dpr=2",
+          "lazyLoad": true,
+          "alt": "Iconic Soap General Hospital Is Coming To 10 Play",
+          "placeholderUrl": "/images/image_small.png"
+        },
+        "cardTitle": "Iconic Soap General Hospital Is Coming To 10 Play",
+        "cardDescription": " To kick off the new year, you\u0027ll be able to catch-up on over 50 episodes from Season 62 of General Hospital on 10 Play, with new episodes arriving within days of the U.S. broadcast from Tuesday, 14 January.",
+        "videoLabel": null,
+        "videoDuration": null,
+        "datePublished": "2024-10-22T03:06:57",
+        "startDate": null,
+        "endDate": null,
+        "datePublishedString": null,
+        "urlCode": "tpa241022sneit",
+        "isLive": false,
+        "id": 1345587,
+        "tpId": "MTg1NTQzNw==",
+        "genre": "Drama"
+      }]
+    }
+  },
+  "isHubPage": false,
+  "isHomePage": false,
+  "isShowPage": true,
+  "isDefaultPage": false
+};
+</script>
+
+<script>
+const showPageData = {
+  "lastModified": "2024-05-28T03:56:14",
+  "pageTitle": "NCIS: Sydney - S1 Ep. 1",
+  "marqueeItems": null,
+  "video": {
+    "videoId": "9000000000086538",
+    "showId": 1284870,
+    "showUrlCode": "sh231127lqxhy",
+    "title": "NCIS: Sydney - S1 Ep. 1",
+    "description": "The death of a US submariner during an AUKUS ceremony in Sydney is investigated in a joint effort between NCIS Agents Afloat and the Australian Federal Police, and NCIS: Sydney is born.",
+    "nextAirDate": null,
+    "expires": "2030-11-09T12:59:00",
+    "airDate": "2024-05-15T21:38:00",
+    "poster": "https://10play.com.au/ip/vs/10PlayImages/9000000000086538/thumb-2059992.jpg?image-profile=image_large\u0026io=landscape",
+    "isLive": false,
+    "duration": 0.0,
+    "urlCode": "tpv240513xzbrt",
+    "link": "/ncis-sydney/episodes/season-1/ncis-sydney-s1-ep-1/tpv240513xzbrt",
+    "showRatingClassification": "M",
+    "programClassification": "M",
+    "consumerAdvice": "",
+    "displayOverlay": true,
+    "genre": "Drama",
+    "state": null,
+    "memberGated": true,
+    "isWebLive": false,
+    "captionUrl": "https://10play.com.au/ip/vtt/0L-ncissydney-NCISSYD_001_20240515-TEN.vtt"
+  },
+  "aboutDetails": null,
+  "isLive": false,
+  "isLivePrerollDisabled": false,
+  "liveStreamSchedules": [],
+  "showType": "Standard",
+  "showSlug": "ncis-sydney",
+  "seasonSlug": "season-1",
+  "contentCategorySlug": "episodes",
+  "adOpsInformation": null,
+  "genericOverlay": null,
+  "liveCountdownMinutes": 0,
+  "subnavs": [{
+    "type": "content",
+    "navigationPosition": "video_extras",
+    "title": "Episodes",
+    "slug": "episodes",
+    "url": "/ncis-sydney/episodes",
+    "content": [{
+      "components": [{
+        "carouselId": "1284888",
+        "title": "Episodes",
+        "sponsorMessage": null,
+        "link": null,
+        "hasAds": true,
+        "hasMore": false,
+        "loadMoreUrl": "/api/carousel/1284888?seasonId=1284886",
+        "position": 0,
+        "liveStreamSchedules": null,
+        "tpId": "MTg4NDgyOA==",
+        "slides": [{
+          "contentType": "video",
+          "cardLink": "/ncis-sydney/episodes/season-1/ncis-sydney-s1-ep-1/tpv240513xzbrt",
+          "cardImage": {
+            "url": "https://10play.com.au/ip/vs/10PlayImages/9000000000086538/thumb-2059992.jpg?image-profile=image_small\u0026io=landscape",
+            "retinaUrl": "https://10play.com.au/ip/vs/10PlayImages/9000000000086538/thumb-2059992.jpg?image-profile=image_small\u0026io=landscape\u0026dpr=2",
+            "lazyLoad": true,
+            "alt": "NCIS: Sydney - S1 Ep. 1",
+            "placeholderUrl": "/images/image_small.png"
+          },
+          "cardTitle": "S1 Ep. 1 - Gone Fission",
+          "cardDescription": "The death of a US submariner during an AUKUS ceremony in Sydney is investigated in a joint effort between NCIS Agents Afloat and the Australian Federal Police, and NCIS: Sydney is born.",
+          "videoLabel": null,
+          "videoDuration": "43 mins",
+          "datePublished": "2024-05-15T11:38:00",
+          "startDate": null,
+          "endDate": null,
+          "datePublishedString": "2024-05-15T11:38:00+00:00",
+          "urlCode": "tpv240513xzbrt",
+          "isLive": false,
+          "id": 1314306,
+          "tpId": "MTAzNDEzNg==",
+          "genre": "Drama"
+        }, {
+          "contentType": "video",
+          "cardLink": "/ncis-sydney/episodes/season-1/episode-2/tpv240520ksvcu",
+          "cardImage": {
+            "url": "https://10play.com.au/ip/vs/10PlayImages/9000000000086711/thumb-2070396.jpg?image-profile=image_small\u0026io=landscape",
+            "retinaUrl": "https://10play.com.au/ip/vs/10PlayImages/9000000000086711/thumb-2070396.jpg?image-profile=image_small\u0026io=landscape\u0026dpr=2",
+            "lazyLoad": true,
+            "alt": "NCIS: Sydney - S1 Ep. 2",
+            "placeholderUrl": "/images/image_small.png"
+          },
+          "cardTitle": "S1 Ep. 2 - Snakes In The Grass",
+          "cardDescription": "When a Navy Compliance Officer is found dead in a waterhole, the team\u0027s investigation uncovers a complex trafficking ring, whilst they manage new workplace teething problems … and a talking galah.",
+          "videoLabel": null,
+          "videoDuration": "43 mins",
+          "datePublished": "2024-05-22T11:41:00",
+          "startDate": null,
+          "endDate": null,
+          "datePublishedString": "2024-05-22T11:41:00+00:00",
+          "urlCode": "tpv240520ksvcu",
+          "isLive": false,
+          "id": 1315446,
+          "tpId": "MTQ0NTEzNg==",
+          "genre": "Drama"
+        }, {
+          "contentType": "video",
+          "cardLink": "/ncis-sydney/episodes/season-1/episode-3/tpv240527uapxq",
+          "cardImage": {
+            "url": "https://10play.com.au/ip/vs/10PlayImages/9000000000086913/thumb-844665.jpg?image-profile=image_small\u0026io=landscape",
+            "retinaUrl": "https://10play.com.au/ip/vs/10PlayImages/9000000000086913/thumb-844665.jpg?image-profile=image_small\u0026io=landscape\u0026dpr=2",
+            "lazyLoad": true,
+            "alt": "NCIS: Sydney - S1 Ep. 3",
+            "placeholderUrl": "/images/image_small.png"
+          },
+          "cardTitle": "S1 Ep. 3 - Brothers In Arms",
+          "cardDescription": "When a shark spits out the arm of an ex-US Navy SEAL, the team\u0027s investigation tests the loyalty of former navy divers and uncovers a murky surveillance plot that could have ties to one of the Allies.",
+          "videoLabel": null,
+          "videoDuration": "42 mins",
+          "datePublished": "2024-05-29T11:40:00",
+          "startDate": null,
+          "endDate": null,
+          "datePublishedString": "2024-05-29T11:40:00+00:00",
+          "urlCode": "tpv240527uapxq",
+          "isLive": false,
+          "id": 1316836,
+          "tpId": "MTM4NjEzNg==",
+          "genre": "Drama"
+        }, {
+          "contentType": "video",
+          "cardLink": "/ncis-sydney/episodes/season-1/episode-4/tpv240604aiybp",
+          "cardImage": {
+            "url": "https://10play.com.au/ip/vs/10PlayImages/9000000000087228/thumb-2095200.jpg?image-profile=image_small\u0026io=landscape",
+            "retinaUrl": "https://10play.com.au/ip/vs/10PlayImages/9000000000087228/thumb-2095200.jpg?image-profile=image_small\u0026io=landscape\u0026dpr=2",
+            "lazyLoad": true,
+            "alt": "NCIS: Sydney - S1 Ep. 4",
+            "placeholderUrl": "/images/image_small.png"
+          },
+          "cardTitle": "S1 Ep. 4 - Ghosted",
+          "cardDescription": "When a US Petty Officer\u0027s body is found in Sydney\u0027s historic Rocks area, a decades old Navy Cross medal holds the clue to solving the murder, leading the team on a wild ghost chase to catch a killer.",
+          "videoLabel": null,
+          "videoDuration": "44 mins",
+          "datePublished": "2024-06-05T11:37:00",
+          "startDate": null,
+          "endDate": null,
+          "datePublishedString": "2024-06-05T11:37:00+00:00",
+          "urlCode": "tpv240604aiybp",
+          "isLive": false,
+          "id": 1318346,
+          "tpId": "MTQzODEzNg==",
+          "genre": "Drama"
+        }, {
+          "contentType": "video",
+          "cardLink": "/ncis-sydney/episodes/season-1/episode-5/tpv240611jylro",
+          "cardImage": {
+            "url": "https://10play.com.au/ip/vs/10PlayImages/9000000000087518/thumb-517998.jpg?image-profile=image_small\u0026io=landscape",
+            "retinaUrl": "https://10play.com.au/ip/vs/10PlayImages/9000000000087518/thumb-517998.jpg?image-profile=image_small\u0026io=landscape\u0026dpr=2",
+            "lazyLoad": true,
+            "alt": "NCIS: Sydney - S1 Ep. 5",
+            "placeholderUrl": "/images/image_small.png"
+          },
+          "cardTitle": "S1 Ep. 5 - Doggieccino Day Afternoon",
+          "cardDescription": "A hostage situation at a dog cafe takes NCIS: Sydney into the world of puppaccinos and paw-tein balls, as the team race to save one of their own whilst investigating a connected bank heist.",
+          "videoLabel": null,
+          "videoDuration": "43 mins",
+          "datePublished": "2024-06-12T11:42:00",
+          "startDate": null,
+          "endDate": null,
+          "datePublishedString": "2024-06-12T11:42:00+00:00",
+          "urlCode": "tpv240611jylro",
+          "isLive": false,
+          "id": 1319656,
+          "tpId": "MTU2OTEzNg==",
+          "genre": "Drama"
+        }, {
+          "contentType": "video",
+          "cardLink": "/ncis-sydney/episodes/season-1/episode-6/tpv240619jukob",
+          "cardImage": {
+            "url": "https://10play.com.au/ip/vs/10PlayImages/9000000000087779/thumb-1515600.jpg?image-profile=image_small\u0026io=landscape",
+            "retinaUrl": "https://10play.com.au/ip/vs/10PlayImages/9000000000087779/thumb-1515600.jpg?image-profile=image_small\u0026io=landscape\u0026dpr=2",
+            "lazyLoad": true,
+            "alt": "NCIS: Sydney - S1 Ep. 6",
+            "placeholderUrl": "/images/image_small.png"
+          },
+          "cardTitle": "S1 Ep. 6 - Extraction",
+          "cardDescription": "When the suspicious death of an old Drug Squad colleague pulls Evie back into a secret undercover operation, DeShawn is torn between loyalty to his friend and loyalty to his team.",
+          "videoLabel": null,
+          "videoDuration": "42 mins",
+          "datePublished": "2024-06-19T11:40:00",
+          "startDate": null,
+          "endDate": null,
+          "datePublishedString": "2024-06-19T11:40:00+00:00",
+          "urlCode": "tpv240619jukob",
+          "isLive": false,
+          "id": 1321315,
+          "tpId": "MTEzMTIzNQ==",
+          "genre": "Drama"
+        }, {
+          "contentType": "video",
+          "cardLink": "/ncis-sydney/episodes/season-1/episode-7/tpv240624wqxub",
+          "cardImage": {
+            "url": "https://10play.com.au/ip/vs/10PlayImages/9000000000088270/thumb-513000.jpg?image-profile=image_small\u0026io=landscape",
+            "retinaUrl": "https://10play.com.au/ip/vs/10PlayImages/9000000000088270/thumb-513000.jpg?image-profile=image_small\u0026io=landscape\u0026dpr=2",
+            "lazyLoad": true,
+            "alt": "NCIS: Sydney - S1 Ep. 7",
+            "placeholderUrl": "/images/image_small.png"
+          },
+          "cardTitle": "S1 Ep. 7 - Bunker Down",
+          "cardDescription": "A glitzy tech launch turns into a disaster, leaving half of NCIS: Sydney trapped underground, and the others scrambling to save the day before the clock … and the oxygen … runs out!",
+          "videoLabel": null,
+          "videoDuration": "43 mins",
+          "datePublished": "2024-06-26T11:37:00",
+          "startDate": null,
+          "endDate": null,
+          "datePublishedString": "2024-06-26T11:37:00+00:00",
+          "urlCode": "tpv240624wqxub",
+          "isLive": false,
+          "id": 1322686,
+          "tpId": "MTg2MjIzNg==",
+          "genre": "Drama"
+        }, {
+          "contentType": "video",
+          "cardLink": "/ncis-sydney/episodes/season-1/episode-8/tpv240702kepnq",
+          "cardImage": {
+            "url": "https://10play.com.au/ip/vs/10PlayImages/9000000000088611/thumb-2053596.jpg?image-profile=image_small\u0026io=landscape",
+            "retinaUrl": "https://10play.com.au/ip/vs/10PlayImages/9000000000088611/thumb-2053596.jpg?image-profile=image_small\u0026io=landscape\u0026dpr=2",
+            "lazyLoad": true,
+            "alt": "NCIS: Sydney - S1 Ep. 8",
+            "placeholderUrl": "/images/image_small.png"
+          },
+          "cardTitle": "S1 Ep. 8 - Blonde Ambition",
+          "cardDescription": "When JD\u0027s son is kidnapped by an international assassin in exchange for a wanted criminal in NCIS custody, it puts NCIS: Sydney in the global spotlight and exposes an enemy within.",
+          "videoLabel": null,
+          "videoDuration": "43 mins",
+          "datePublished": "2024-07-03T11:43:00",
+          "startDate": null,
+          "endDate": null,
+          "datePublishedString": "2024-07-03T11:43:00+00:00",
+          "urlCode": "tpv240702kepnq",
+          "isLive": false,
+          "id": 1324399,
+          "tpId": "MTkzNDIzOQ==",
+          "genre": "Drama"
+        }],
+        "type": "Carousel",
+        "carouselType": "",
+        "desktopBackgroundImageUrl": null,
+        "mobileBackgroundImageUrl": null,
+        "backgroundClickThroughUrl": null,
+        "isPoster": false
+      }],
+      "tpId": "MTg4NDgyNg==",
+      "title": "Season 1",
+      "slug": "season-1"
+    }]
+  }],
+  "show": {
+    "id": 1284870,
+    "tpId": "MTc4NDgyMA==",
+    "title": "NCIS: Sydney",
+    "logoImage": "https://10play.com.au/ip/s3/2023/11/27/da7874948c3b6911068e5f5044a64a68-1284875.jpg?image-profile=image_medium\u0026io=landscape",
+    "urlCode": "sh231127lqxhy",
+    "slug": "ncis-sydney",
+    "colour": "#0351dd",
+    "channel": null
+  },
+  "seasonList": [{
+    "tpId": "MTg4NDgyNg==",
+    "title": "Season 1",
+    "slug": "season-1"
+  }],
+  "isShow": true,
+  "hideFromSearchEngine": false,
+  "metaDescription": "The death of a US submariner during an AUKUS ceremony in Sydney is investigated in a joint effort between NCIS Agents Afloat and the Australian Federal Police, and NCIS: Sydney is born.",
+  "metaKeywords": null,
+  "hideHeaderFooter": false,
+  "siteRoot": "https://10play.com.au",
+  "siteName": "10 play",
+  "facebookAppId": "182472175873300",
+  "url": "/ncis-sydney/episodes/season-1/ncis-sydney-s1-ep-1/tpv240513xzbrt",
+  "canonicalUrl": "https://10play.com.au/ncis-sydney/episodes/season-1/ncis-sydney-s1-ep-1/tpv240513xzbrt",
+  "globalSettings": {
+    "playbackSettings": {
+      "consumerAdviceDisplayTime": 8
+    },
+    "experiments": {
+      "Freewheel Enabled": {
+        "enabled": true,
+        "rolloutPercentage": 100
+      }
+    }
+  },
+  "bodyClass": "showpage",
+  "pageType": "ShowPage",
+  "themeColor": "#0351dd",
+  "turnOffAds": false
+};
+</script>
+
+<script src="/js/playerBase.compiled.js?buildId=1738106162" hot-reload></script>
+<script src="/js/ShowsIndex.compiled.js?buildId=1738106162" hot-reload></script>
+<script src="/js/Vendor.compiled.js?buildId=1738106162" hot-reload></script>
+
+--------------------------------------------------------------------------------
+
+https://10play.com.au/js/playerBase.compiled.js?buildId=1738106162
+https://10play.com.au/js/ShowsIndex.compiled.js?buildId=1738106162
+https://10play.com.au/js/Vendor.compiled.js?buildId=1738106162
+
+-------------------------------------------------------------------------------- cheat code :)
+
+https://github.com/yt-dlp/yt-dlp/blob/master/yt_dlp/extractor/tenplay.py
+  cheat :)
+
+URL regex:
+  https?://(?:www\.)?10play\.com\.au/(?:[^/]+/)+(tpv\d{6}[a-z]{5})
+
+https://10play.com.au/api/v1/videos/${urlRegexMatch[1] || showPageData.video.videoId}
+
+https://vod.ten.com.au/api/videos/bcquery?command=find_videos_by_id&video_id=${altId}
+
+--------------------------------------------------------------------------------
+
+test video (revisited):
+=======================
+
+https://10play.com.au/ncis-sydney
+https://10play.com.au/ncis-sydney/episodes/season-1/ncis-sydney-s1-ep-1/tpv240513xzbrt
+
+urlRegexMatch[1]           == 'tpv240513xzbrt'
+showPageData.video.videoId == '9000000000086538'
+
+--------------------------------------------------------------------------------
+
+https://10play.com.au/api/v1/videos/tpv240513xzbrt
+  {
+    "showId": "sh231127lqxhy",
+    "episode": "1",
+    "season": "1",
+    "expiry": 1920459540,
+    "published": 1715773080,
+    "relatedContentApiEndpoint": "https://10play.com.au/api/v1/videos/upnext/tpv240513xzbrt",
+    "playbackApiEndpoint": "https://10play.com.au/api/v1/videos/playback/tpv240513xzbrt",
+    "showApiEndpoint": "https://10play.com.au/api/v1/shows/sh231127lqxhy",
+    "metadataApiEndpoint": "https://10play.com.au/api/v1/videos/tpv240513xzbrt",
+    "memberGated": true,
+    "tvChannel": "TEN",
+    "tvShow": "NCIS: Sydney",
+    "clipTitle": "S1 Ep. 1 - Gone Fission",
+    "vodTitle": "S1 Ep. 1 - Gone Fission",
+    "abstract": "The death of a US submariner during an AUKUS ceremony in Sydney is investigated in a joint effort between NCIS Agents Afloat and the Australian Federal Police, and NCIS: Sydney is born.",
+    "episodeCrid": "1783978",
+    "seriesCrid": "76516",
+    "altId": "9000000000086538",
+    "referenceId": "0L-ncissydney-NCISSYD_001_20240515-TEN",
+    "videoTypeLongForm": "Full Episode",
+    "videoTypeShortForm": "",
+    "posterImageUrl": "https://10play.com.au/ip/s3/2023/11/27/f4c13e10cdaebf7be9d14b056898cb02-1284877.jpg",
+    "isNewEpisode": false,
+    "consumerAdvice": "",
+    "displayOverlay": true,
+    "captionUrl": "https://10play.com.au/ip/vtt/0L-ncissydney-NCISSYD_001_20240515-TEN.vtt",
+    "popularShowPostersEndpoint": "https://10play.com.au/api/v1/popular/show/posters",
+    "duration": 2575,
+    "genre": "Drama",
+    "classification": "M",
+    "id": "tpv240513xzbrt",
+    "type": "Video",
+    "title": "S1 Ep. 1 - Gone Fission",
+    "subtitle": "NCIS: Sydney - S1 Ep. 1",
+    "imageUrl": "https://10play.com.au/ip/vs/10PlayImages/9000000000086538/thumb-2059992.jpg",
+    "description": "The death of a US submariner during an AUKUS ceremony in Sydney is investigated in a joint effort between NCIS Agents Afloat and the Australian Federal Police, and NCIS: Sydney is born."
+  }
+
+--------------------------------------------------------------------------------
+
+https://10play.com.au/api/v1/videos/9000000000086538
+  {
+    "showId": "sh231127lqxhy",
+    "episode": "1",
+    "season": "1",
+    "expiry": 1920459540,
+    "published": 1715773080,
+    "relatedContentApiEndpoint": "https://10play.com.au/api/v1/videos/upnext/tpv240513xzbrt",
+    "playbackApiEndpoint": "https://10play.com.au/api/v1/videos/playback/tpv240513xzbrt",
+    "showApiEndpoint": "https://10play.com.au/api/v1/shows/sh231127lqxhy",
+    "metadataApiEndpoint": "https://10play.com.au/api/v1/videos/tpv240513xzbrt",
+    "memberGated": true,
+    "tvChannel": "TEN",
+    "tvShow": "NCIS: Sydney",
+    "clipTitle": "S1 Ep. 1 - Gone Fission",
+    "vodTitle": "S1 Ep. 1 - Gone Fission",
+    "abstract": "The death of a US submariner during an AUKUS ceremony in Sydney is investigated in a joint effort between NCIS Agents Afloat and the Australian Federal Police, and NCIS: Sydney is born.",
+    "episodeCrid": "1783978",
+    "seriesCrid": "76516",
+    "altId": "9000000000086538",
+    "referenceId": "0L-ncissydney-NCISSYD_001_20240515-TEN",
+    "videoTypeLongForm": "Full Episode",
+    "videoTypeShortForm": "",
+    "posterImageUrl": "https://10play.com.au/ip/s3/2023/11/27/f4c13e10cdaebf7be9d14b056898cb02-1284877.jpg",
+    "isNewEpisode": false,
+    "consumerAdvice": "",
+    "displayOverlay": true,
+    "captionUrl": "https://10play.com.au/ip/vtt/0L-ncissydney-NCISSYD_001_20240515-TEN.vtt",
+    "popularShowPostersEndpoint": "https://10play.com.au/api/v1/popular/show/posters",
+    "duration": 2575,
+    "genre": "Drama",
+    "classification": "M",
+    "id": "tpv240513xzbrt",
+    "type": "Video",
+    "title": "S1 Ep. 1 - Gone Fission",
+    "subtitle": "NCIS: Sydney - S1 Ep. 1",
+    "imageUrl": "https://10play.com.au/ip/vs/10PlayImages/9000000000086538/thumb-2059992.jpg",
+    "description": "The death of a US submariner during an AUKUS ceremony in Sydney is investigated in a joint effort between NCIS Agents Afloat and the Australian Federal Police, and NCIS: Sydney is born."
+  }
+
+--------------------------------------------------------------------------------
+
+in both cases:
+  altId == showPageData.video.videoId == '9000000000086538'
+
+strictly speaking:
+  * this 1st XHR isn't necessary
+    - its purpose is to download and parse some JSON to determine: altId
+  * the script tags in the DOM could be inspected and parsed to determine the same value in: showPageData.video.videoId
+  * although, the extra XHR:
+    - might actually be faster.. requiring the browser to perform less work
+    - means that the userscript can begin work before the DOM is ready
+        ie: @run-at document-start
+
+--------------------------------------------------------------------------------
+
+https://vod.ten.com.au/api/videos/bcquery?command=find_videos_by_id&video_id=9000000000086538
+  {
+    "items": [{
+      "accountId": 2199827728001,
+      "creationDate": "1715773080000",
+      "cuePoints": [{
+        "name": "1",
+        "videoId": 9000000000086538,
+        "time": 477000,
+        "forceStop": false,
+        "metadata": null,
+        "type": 1,
+        "typeEnum": "AD",
+        "id": 6000001
+      }, {
+        "name": "2",
+        "videoId": 9000000000086538,
+        "time": 1024000,
+        "forceStop": false,
+        "metadata": null,
+        "type": 1,
+        "typeEnum": "AD",
+        "id": 6000002
+      }, {
+        "name": "3",
+        "videoId": 9000000000086538,
+        "time": 1467000,
+        "forceStop": false,
+        "metadata": null,
+        "type": 1,
+        "typeEnum": "AD",
+        "id": 6000003
+      }, {
+        "name": "4",
+        "videoId": 9000000000086538,
+        "time": 1926000,
+        "forceStop": false,
+        "metadata": null,
+        "type": 1,
+        "typeEnum": "AD",
+        "id": 6000004
+      }],
+      "customFields": {
+        "broadcast_date_previous": "05/15/2024 20:40:00",
+        "clip_title": "S1 Ep. 1 - Gone Fission",
+        "end_date_act": "2030-11-09 11:59 PM",
+        "end_date_app": "2030-11-09 11:59 PM",
+        "end_date_au": "2030-11-09 11:59 PM",
+        "end_date_nsw": "2030-11-09 11:59 PM",
+        "end_date_nt": "2030-11-09 11:59 PM",
+        "end_date_qld": "2030-11-09 11:59 PM",
+        "end_date_sa": "2030-11-09 11:59 PM",
+        "end_date_tas": "2030-11-09 11:59 PM",
+        "end_date_vic": "2030-11-09 11:59 PM",
+        "end_date_wa": "2030-11-09 11:59 PM",
+        "epg_program_id": "426228",
+        "episode_crid_id": "1783978",
+        "episode_name": "Gone Fission",
+        "expiry_date": "2030-11-09 23:59 PM",
+        "expiry_tag": "11/09/2030",
+        "production_company_distributor": "Endemol Shine Australia Pty Lt",
+        "program_classification": "M",
+        "program_language": "English",
+        "restriction_bymember": "true",
+        "series_crid_id": "76516",
+        "ssa_ready": "true",
+        "start_date_act": "2024-05-15 09:38 PM",
+        "start_date_app": "2024-05-15 09:38 PM",
+        "start_date_au": "2024-05-15 09:38 PM",
+        "start_date_nsw": "2024-05-15 09:38 PM",
+        "start_date_nt": "2024-05-15 09:38 PM",
+        "start_date_qld": "2024-05-15 09:38 PM",
+        "start_date_sa": "2024-05-15 09:38 PM",
+        "start_date_tas": "2024-05-15 09:38 PM",
+        "start_date_vic": "2024-05-15 09:38 PM",
+        "start_date_wa": "2024-05-15 09:38 PM",
+        "tv_channel": "TEN",
+        "tv_episode": "NCISSYD/001",
+        "tv_season": "1",
+        "tv_show": "NCIS: Sydney",
+        "tv_show_group": "ncissydney",
+        "video_type_long_form": "Full Episode",
+        "google_dai_cms_id": "2489270",
+        "google_dai_video_id": "9000000000086538",
+        "video_type_drm_only": "false"
+      },
+      "economics": "None",
+      "endDate": "1920459540000",
+      "id": 9000000000086538,
+      "itemState": "ACTIVE",
+      "lastModifiedDate": "1716868574000",
+      "length": 2575000,
+      "longDescription": "The death of a US submariner during an AUKUS ceremony in Sydney is investigated in a joint effort between NCIS Agents Afloat and the Australian Federal Police, and NCIS: Sydney is born.",
+      "name": "NCIS: Sydney - S1 Ep. 1",
+      "playsTotal": 0,
+      "playsTrailingWeek": 0,
+      "publishedDate": "1715773080000",
+      "referenceId": "0L-ncissydney-NCISSYD_001_20240515-TEN",
+      "shortDescription": "The death of a US submariner during an AUKUS ceremony in Sydney is investigated in a joint effort between NCIS Agents Afloat and the Australian Federal Police, and NCIS: Sydney is born.",
+      "startDate": "1715773080000",
+      "tags": [],
+      "thumbnailURL": "https://10play.com.au/ip/vs/10PlayImages/9000000000086538/thumb-2059992.jpg?image-profile=standard_card",
+      "videoStillURL": "https://10play.com.au/ip/vs/10PlayImages/9000000000086538/thumb-2059992.jpg?image-profile=large_card",
+      "ssaUrl": "https://vod.ten.com.au/api/SSAConfig?id=9000000000086538",
+      "video_type": "Show",
+      "availability": "Aired 15 May 2024",
+      "duration": "42 mins",
+      "HLSURL": "https://10-selector.global.ssl.fastly.net/s/kYEXFC/media/9000000000086538.m3u8?mbr=true&manifest=m3u&format=redirect&vtoken=1738661994_5951b8ade5cf7d244d76d17c80dce8181cb8ad1d8c5309829909a698c9c5825e",
+      "dashManifestUrl": "https://10-selector.global.ssl.fastly.net/s/kYEXFC/media/9000000000086538.mpd?mbr=true&manifest=mpeg-dash&format=redirect&vtoken=1738661994_5951b8ade5cf7d244d76d17c80dce8181cb8ad1d8c5309829909a698c9c5825e",
+      "googleDaiCmsId": "2489270",
+      "googleDaiVideoId": "9000000000086538"
+    }],
+    "page_size": 20,
+    "page_number": 0,
+    "total_count": 1,
+    "success": true
+  }
+
+dang! ..tl;dr:
+  {
+    "items": [{
+      "HLSURL": "https://10-selector.global.ssl.fastly.net/s/kYEXFC/media/9000000000086538.m3u8?mbr=true&manifest=m3u&format=redirect&vtoken=1738661994_5951b8ade5cf7d244d76d17c80dce8181cb8ad1d8c5309829909a698c9c5825e",
+      "dashManifestUrl": "https://10-selector.global.ssl.fastly.net/s/kYEXFC/media/9000000000086538.mpd?mbr=true&manifest=mpeg-dash&format=redirect&vtoken=1738661994_5951b8ade5cf7d244d76d17c80dce8181cb8ad1d8c5309829909a698c9c5825e"
+    }]
+  }
+
+neat trick!
+  HLSURL = HLSURL.replace(',150,75,55,0000', ',300,150,75,55,0000')  // Attempt to get a higher quality stream
+
+--------------------------------------------------------------------------------
